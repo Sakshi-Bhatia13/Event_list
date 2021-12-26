@@ -1,0 +1,29 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'form.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="inputs">
+            <label>Event Name</label>
+            <input id="name" type="Event" placeholder="Name" />
+            <label>Description</label>
+            <input id="data" type="Description" placeholder="Describe" />
+            <label>Image</label>
+            <input id="imagesrc" type="link" placeholder="Share link for the image" />
+            <label>Date & Time</label>
+            <input id="date" type="link" placeholder="Format: Day,Date,Time IST" />
+            <label>Location</label>
+            <input id="location" type="Text" placeholder="Location of Event" />
+            <button id="add_event" type="submit">Add event</button>
+        </div>
+    </div>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+ENGINE = "django.db.backends.mysql"
+NAME = "blog_data"
+USER = "testing"
+PASSWORD = "password"
+HOST = "localhost"
+PORT = "3306"

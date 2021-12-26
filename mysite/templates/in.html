@@ -1,0 +1,91 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="/">
+            <h1>eventbrite</h1>
+        </a>
+        <div>
+            <i class="fas fa-search"></i>
+            <input class="search" type="text" placeholder="Search for events">
+        </div>
+
+        <nav>
+            <ul class="nav__links">
+                <li><a href="#">Browse Events</a></li>
+                <li><a href="#"><select class="dropdown">
+                            <option class="dropdown-list">Host an event</option>
+                            <option class="dropdown-list">New event</option>
+
+                        </select></a>
+                </li>
+                <li><a href="#"><select class="dropdown">
+                            <option class="dropdown-list">Help</option>
+                            <option class="dropdown-list">Call</option>
+
+                        </select></a>
+                </li>
+                <li>
+                    <i class="fas fa-user-circle"></i>
+                    <a href="#"><select class="dropdown">
+
+                            <option class="dropdown-list" value="mail">abcdefg@gmail.com</option>
+                            <option class="dropdown-list" value="Logout">Logout</option>
+                        </select></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div style="display: flex;">
+            <h1 class="heading">Likes</h1>
+            <a href="http://127.0.0.1:8000/add_event"><button style="border: none; background-color: white; "
+                    id="add"><i class="fas fa-plus-square"></i></button></a>
+
+        </div>
+        <ul>
+            {% for i in d_data %}
+            <li style="list-style: none;">
+                <div class="event">
+                    <div class="event-des">
+                        <img src={{i.image}} alt="" height="200px" width="300px">
+                        <div class="event-info">
+                            <h1>{{i.event_name}}</h1>
+                            <p>{{i.time}}</p>
+                            <p>{{i.data}}</p>
+                            <p style="visibility: hidden;" class="dd">{{i.is_liked}}</p>
+                        </div>
+                    </div>
+
+                    <div class="icons">
+                        <i class="fas fa-upload"></i>
+                        <button style="border: hidden; font-size: 25px;">
+                            <i class="fas fa-trash" value={{i.id}}></i>
+                        </button>
+
+                        <button class="submit" style="border: none; " value="click ">
+                            {% if i.is_liked is False %}
+                            <i class="fas fa-heart" value={{i.id}} style="color: grey;"></i></button>
+                        {% else %}
+                        <i class="fas fa-heart" value={{i.id}} style="color: red;"></i></button>
+                        {% endif %}
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script src="{% static 'script.js' %}"></script>
+    <script src="https://kit.fontawesome.com/3786f915fe.js " crossorigin="anonymous "></script>
+</body>
+
+</html>
