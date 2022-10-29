@@ -1,13 +1,14 @@
-from django.shortcuts import render
+import json
 from os import name
+
 from django.http import response
+from django.shortcuts import render
 from rest_framework import serializers
+from rest_framework.response import Response
 from rest_framework.views import APIView
+
 from .models import Event
 from .serializers import EventSerializer
-from rest_framework.response import Response
-import json
-from django.shortcuts import render
 
 # Create your views here.
 
